@@ -206,11 +206,14 @@
       font-size: clamp(2.5rem, 6vw, 5rem);
       font-weight: 700;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+      color: #FFD700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .accent-a-main {
+      color: #000;
+      font-weight: 800;
+      text-shadow: none;
     }
 
     .hero .tagline {
@@ -304,6 +307,10 @@
       color: #FFD700;
       font-weight: 700;
       text-shadow: 1px 1px 0 #000;
+    }
+
+    .hero h1 .accent-a-main {
+      -webkit-text-fill-color: #000;
     }
 
     .section-title {
@@ -762,70 +769,12 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <div class="hero-flags">
-        <!-- Garifuna Flag -->
-        <div class="flag garifuna-flag">
-          <div class="stripe yellow"></div>
-          <div class="stripe white"></div>
-          <div class="stripe black"></div>
-        </div>
-        <!-- American Flag -->
-        <div class="flag">
-          <svg viewBox="0 0 190 100" width="80" height="50">
-            <rect fill="#bf0a30" width="190" height="100"/>
-            <rect fill="#fff" y="7.69" width="190" height="7.69"/>
-            <rect fill="#fff" y="23.08" width="190" height="7.69"/>
-            <rect fill="#fff" y="38.46" width="190" height="7.69"/>
-            <rect fill="#fff" y="53.85" width="190" height="7.69"/>
-            <rect fill="#fff" y="69.23" width="190" height="7.69"/>
-            <rect fill="#fff" y="84.62" width="190" height="7.69"/>
-            <rect fill="#3c3b6e" width="76" height="53.85"/>
-            <g fill="#fff">
-              <g id="s18"><g id="s9"><g id="s5"><g id="s4"><path id="s" d="M6.33,3.5l1,3.08h3.24l-2.62,1.9l1,3.08l-2.62-1.9l-2.62,1.9l1-3.08l-2.62-1.9h3.24z"/><use href="#s" x="12.66"/></g><use href="#s4" x="25.32"/></g><use href="#s4" x="50.64"/></g><use href="#s5" y="10.77"/></g><use href="#s9" y="21.54"/></g>
-              <use href="#s18" x="6.33" y="5.38"/>
-            </g>
-          </svg>
-        </div>
-        <!-- Maryland Flag -->
-        <div class="flag">
-          <svg viewBox="0 0 200 100" width="80" height="50">
-            <!-- Quadrant 1 (top-left) - Calvert colors -->
-            <rect x="0" y="0" width="50" height="50" fill="#000"/>
-            <rect x="50" y="0" width="50" height="50" fill="#FFD700"/>
-            <rect x="0" y="0" width="50" height="12.5" fill="#FFD700"/>
-            <rect x="0" y="25" width="50" height="12.5" fill="#FFD700"/>
-            <rect x="50" y="12.5" width="50" height="12.5" fill="#000"/>
-            <rect x="50" y="37.5" width="50" height="12.5" fill="#000"/>
-            <!-- Quadrant 2 (top-right) - Crossland colors -->
-            <rect x="100" y="0" width="50" height="50" fill="#fff"/>
-            <rect x="150" y="0" width="50" height="50" fill="#c41e3a"/>
-            <path d="M100,0 L150,50 L100,50 Z" fill="#c41e3a"/>
-            <path d="M150,0 L100,50 L150,50 Z" fill="#fff"/>
-            <path d="M150,0 L200,50 L200,0 Z" fill="#fff"/>
-            <path d="M200,0 L150,50 L200,50 Z" fill="#c41e3a"/>
-            <!-- Quadrant 3 (bottom-left) - Crossland colors -->
-            <rect x="0" y="50" width="50" height="50" fill="#fff"/>
-            <rect x="50" y="50" width="50" height="50" fill="#c41e3a"/>
-            <path d="M0,50 L50,100 L0,100 Z" fill="#c41e3a"/>
-            <path d="M50,50 L0,100 L50,100 Z" fill="#fff"/>
-            <path d="M50,50 L100,100 L100,50 Z" fill="#fff"/>
-            <path d="M100,50 L50,100 L100,100 Z" fill="#c41e3a"/>
-            <!-- Quadrant 4 (bottom-right) - Calvert colors -->
-            <rect x="100" y="50" width="50" height="50" fill="#000"/>
-            <rect x="150" y="50" width="50" height="50" fill="#FFD700"/>
-            <rect x="100" y="50" width="50" height="12.5" fill="#FFD700"/>
-            <rect x="100" y="75" width="50" height="12.5" fill="#FFD700"/>
-            <rect x="150" y="62.5" width="50" height="12.5" fill="#000"/>
-            <rect x="150" y="87.5" width="50" height="12.5" fill="#000"/>
-          </svg>
-        </div>
-      </div>
-      <img src="/images/Iginag Entertainment logo.png" alt="Iginag Entertainment Logo" class="hero-logo">
+<img src="/images/Iginag Entertainment logo.png" alt="Iginag Entertainment Logo" class="hero-logo">
       <div class="hero-badges">
         <span class="hero-badge">🎖️ Veteran Owned</span>
         <span class="hero-badge">✊ Minority Owned</span>
       </div>
-      <h1>Iginag Entertainment</h1>
+      <h1>Igin<span class="accent-a-main">A</span>g Entertainment</h1>
       <p class="tagline">REDN<span class="accent-a">A</span>Z RECORDS & AIR<span class="accent-a">A</span>Z PUBLISHING</p>
       <p class="motto">"The End Is Just the Beginning"</p>
       <div class="cta-buttons">
@@ -868,7 +817,7 @@
         <img src="/images/REDNAZ COVERB.png" alt="RednAz Records">
         <h3>Redn<span class="accent-a">A</span>z Records</h3>
         <p>The recording and creative arm of the company, dedicated to producing quality records that touch lives one song at a time. The label focuses on authentic artistry, intentional storytelling, and strategic release planning that allows artists to grow sustainably in today's global music landscape.</p>
-        <span class="division-btn" onclick="event.preventDefault(); window.open('https://rednazrecords.bandcamp.com/music', '_blank');">🎵 Listen to Our Artists</span>
+        <span class="division-btn" onclick="event.preventDefault(); window.open('https://rednazrecords.bandcamp.com/artists', '_blank');">🎵 Meet Our Artists</span>
       </a>
     </div>
   </section>
