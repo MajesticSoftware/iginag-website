@@ -116,13 +116,72 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 120px 20px 40px;
+      padding: 120px 20px 60px;
       position: relative;
+      background:
+        radial-gradient(ellipse at center, rgba(255, 215, 0, 0.08) 0%, transparent 60%),
+        linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.06) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 215, 0, 0.04) 0%, transparent 40%);
+      pointer-events: none;
     }
 
     .hero-content {
       max-width: 900px;
       animation: fadeInUp 1s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-logo-wrap {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(260px, 38vw, 420px);
+      height: clamp(260px, 38vw, 420px);
+      margin: 0 auto 35px;
+      border-radius: 50%;
+      background: radial-gradient(circle at center, #1a1a1a 0%, #000 70%);
+      border: 3px solid #FFD700;
+      box-shadow:
+        0 0 0 8px rgba(0, 0, 0, 0.8),
+        0 0 0 10px rgba(255, 215, 0, 0.3),
+        0 20px 60px rgba(0, 0, 0, 0.6),
+        0 0 80px rgba(255, 215, 0, 0.25);
+      animation: vinylGlow 4s ease-in-out infinite alternate;
+    }
+
+    .hero-logo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: 12px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 215, 0, 0.25);
+    }
+
+    .hero-logo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 215, 0, 0.15);
+    }
+
+    @keyframes vinylGlow {
+      from { box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.8), 0 0 0 10px rgba(255, 215, 0, 0.3), 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 60px rgba(255, 215, 0, 0.2); }
+      to   { box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.8), 0 0 0 10px rgba(255, 215, 0, 0.5), 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 100px rgba(255, 215, 0, 0.45); }
     }
 
     .hero-flags {
@@ -174,20 +233,11 @@
     .garifuna-flag .stripe.black { background: #000000; }
 
     .hero-logo {
-      width: clamp(250px, 40vw, 450px);
+      width: 70%;
       height: auto;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
-      animation: logoGlow 3s ease-in-out infinite alternate;
-    }
-
-    @keyframes logoGlow {
-      from {
-        filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
-      }
-      to {
-        filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
-      }
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.5));
     }
 
     @keyframes fadeInUp {
@@ -205,15 +255,63 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.5rem, 6vw, 5rem);
       font-weight: 700;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       color: #FFD700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 20px rgba(255, 215, 0, 0.3);
     }
 
     .accent-a-main {
-      color: #000;
+      color: #fff;
       font-weight: 800;
-      text-shadow: none;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+
+    .hero-industry-label {
+      display: inline-block;
+      color: #FFD700;
+      font-size: clamp(0.75rem, 1.2vw, 0.95rem);
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding: 8px 20px;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      border-radius: 50px;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-subheading {
+      color: #fff;
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      font-weight: 400;
+      margin-bottom: 15px;
+      opacity: 0.95;
+    }
+
+    .hero-subheading strong {
+      color: #FFD700;
+      font-weight: 700;
+    }
+
+    .hero-services-pills {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 25px 0 30px;
+    }
+
+    .hero-services-pills span {
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border: 1px solid rgba(255, 215, 0, 0.4);
+      border-radius: 50px;
+      background: rgba(255, 215, 0, 0.05);
     }
 
     .hero .tagline {
@@ -222,14 +320,16 @@
       letter-spacing: 3px;
       margin-bottom: 30px;
       opacity: 0.9;
+      color: #fff;
     }
 
     .hero .motto {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+      font-size: clamp(1.1rem, 2.2vw, 1.6rem);
       font-style: italic;
       color: #FFD700;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
+      opacity: 0.95;
     }
 
     .cta-buttons {
@@ -252,26 +352,27 @@
     }
 
     .btn-primary {
-      background: #000;
-      color: #FFD700;
-      border: none;
+      background: #FFD700;
+      color: #000;
+      border: 2px solid #FFD700;
     }
 
     .btn-primary:hover {
       transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      background: #222;
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.4);
+      background: #fff;
+      border-color: #fff;
     }
 
     .btn-secondary {
       background: transparent;
-      color: #000;
-      border: 2px solid #000;
+      color: #FFD700;
+      border: 2px solid #FFD700;
     }
 
     .btn-secondary:hover {
-      background: #000;
-      color: #FFD700;
+      background: #FFD700;
+      color: #000;
       transform: translateY(-3px);
     }
 
@@ -351,13 +452,42 @@
 
     .about-image {
       position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .about-image img {
       width: 100%;
-      border-radius: 10px;
+      max-width: 420px;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 15px;
       border: 3px solid #FFD700;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-image-caption {
+      margin-top: 20px;
+      text-align: center;
+      color: #1a1a1a;
+    }
+
+    .about-image-caption .name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 4px;
+    }
+
+    .about-image-caption .title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a6d00;
     }
 
     /* Divisions Section */
@@ -813,11 +943,22 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-<img src="/images/Iginag Entertainment logo.png" alt="Iginag Entertainment Logo" class="hero-logo">
-            <h1>Igin<span class="accent-a-main">A</span>g Entertainment</h1>
+      <div class="hero-logo-wrap">
+        <img src="/images/Iginag Entertainment logo.png" alt="Iginag Entertainment Logo" class="hero-logo">
+      </div>
+      <span class="hero-industry-label">• Music Publishing &amp; Record Label Group •</span>
+      <h1>Igin<span class="accent-a-main">A</span>g Entertainment</h1>
+      <p class="hero-subheading">Home of <strong>AirAz Publishing</strong> &amp; <strong>RednAz Records</strong> — supporting artists and songwriters from concept to release.</p>
+      <div class="hero-services-pills">
+        <span>Publishing</span>
+        <span>Distribution</span>
+        <span>Royalties</span>
+        <span>Licensing</span>
+        <span>Artist Development</span>
+      </div>
       <p class="motto">"The End Is Just the Beginning"</p>
       <div class="cta-buttons">
-        <a href="#services" class="btn btn-primary">Our Services</a>
+        <a href="#services" class="btn btn-primary">Explore Services</a>
         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
       </div>
     </div>
@@ -837,7 +978,11 @@
         <p>We champion music that uplifts, inspires, and preserves cultural identity, with a special commitment to the safeguarding of Garifuna music and language.</p>
       </div>
       <div class="about-image fade-in">
-        <img src="/images/Ganigi_IE_COM8.png" alt="Iginag Entertainment">
+        <img src="/images/Evelyn_Bowens.jpeg" alt="Evelyn Bowens - CEO, Iginag Entertainment">
+        <div class="about-image-caption">
+          <div class="name">Evelyn Bowens</div>
+          <div class="title">CEO &amp; Founder</div>
+        </div>
       </div>
     </div>
   </section>
